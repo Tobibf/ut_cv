@@ -1,12 +1,13 @@
 :root {
-  --bg: #f4f7fb;
+  --bg: #eef2f7;
   --surface: #ffffff;
-  --surface-soft: #f8fbff;
-  --text: #1f2937;
-  --text-soft: #4b5563;
-  --primary: #2563eb;
+  --surface-soft: #ffffff;
+  --text: #0f172a;
+  --text-soft: #334155;
+  --text-muted: #475569;
+  --primary: #1d4ed8;
   --primary-soft: #dbeafe;
-  --border: #e5e7eb;
+  --border: #d8e0ea;
   --shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
 }
 
@@ -88,10 +89,10 @@ body {
 header {
   position: relative;
   padding: 20px 16px 18px;
-  color: #fff;
+  color: #ffffff;
   background:
-    radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.35), transparent 40%),
-    linear-gradient(130deg, #0f172a 0%, #1d4ed8 60%, #2563eb 100%);
+    radial-gradient(circle at 80% 30%, rgba(37, 99, 235, 0.28), transparent 42%),
+    linear-gradient(130deg, #0b1220 0%, #1e3a8a 55%, #1d4ed8 100%);
 }
 
 .header-content {
@@ -112,12 +113,13 @@ header h1 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 2.7rem);
   letter-spacing: 0.02em;
+  color: #ffffff;
 }
 
 header p {
   margin: 8px 0 14px;
   font-size: 0.96rem;
-  color: #e5edff;
+  color: #f8fafc;
 }
 
 nav ul {
@@ -139,18 +141,20 @@ nav ul li a {
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #ffffff;
   font-size: 0.82rem;
   font-weight: 600;
   text-decoration: none;
+  background: rgba(15, 23, 42, 0.18);
   transition: all 0.25s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.nav-active {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 .profile-picture-header {
@@ -180,14 +184,14 @@ main section {
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: linear-gradient(180deg, #fff 0%, #fcfdff 100%);
+  background: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 main section:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 26px rgba(30, 64, 175, 0.08);
-  border-color: #d7e3ff;
+  border-color: #c7d2fe;
 }
 
 main section h2 {
@@ -196,9 +200,13 @@ main section h2 {
   gap: 10px;
   margin: 0 0 16px;
   padding-bottom: 12px;
-  border-bottom: 1px dashed #cfe0ff;
-  color: #1e3a8a;
+  border-bottom: 1px solid #cbd5e1;
+  color: #0f172a;
   font-size: 1.12rem;
+}
+
+main section h2 i {
+  color: #1d4ed8;
 }
 
 main section p,
@@ -215,9 +223,75 @@ main section a {
 
 main section a:hover {
   text-decoration: underline;
+  color: #1e3a8a;
 }
 
-.experience-list,
+.experience-group,
+.skills-group {
+  margin-bottom: 22px;
+}
+
+.experience-group:last-child,
+.skills-group:last-child {
+  margin-bottom: 0;
+}
+
+.experience-group h3,
+.skills-group h3 {
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-size: 1.02rem;
+}
+
+.job,
+.education-list > li {
+  margin-bottom: 14px;
+  padding: 16px;
+  border: 1px solid #d8e0ea;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.job:last-child,
+.education-list > li:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  margin-bottom: 8px;
+}
+
+.job-role {
+  margin: 0 0 4px;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.job-org {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.job ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.job li {
+  margin-bottom: 6px;
+  color: var(--text-soft);
+}
+
 .skills-list,
 .education-list,
 .activities-list,
@@ -229,36 +303,7 @@ main section a:hover {
   padding: 0;
 }
 
-.experience-list > li,
-.education-list > li {
-  margin-bottom: 18px;
-  padding: 16px;
-  border: 1px solid #e9eef7;
-  border-radius: 12px;
-  background: var(--surface-soft);
-}
-
-.experience-list > li:last-child,
-.education-list > li:last-child {
-  margin-bottom: 0;
-}
-
-.experience-list h3,
-.education-list h3 {
-  margin: 0 0 10px;
-  color: #0f172a;
-}
-
-.experience-list ul {
-  margin: 8px 0 0;
-  padding-left: 18px;
-}
-
-.experience-list li li {
-  margin-bottom: 6px;
-}
-
-.skills-list {
+.skills-group .skills-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px 16px;
@@ -269,30 +314,37 @@ main section a:hover {
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border: 1px solid #e5ecfa;
+  border: 1px solid #d8e0ea;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .skills-list li i {
   width: 24px;
   text-align: center;
-  color: #2563eb;
+  color: #1d4ed8;
 }
 
 .skills-list li span {
   font-size: 0.96rem;
+  color: var(--text-soft);
 }
 
 .education-list .degree {
   margin: 4px 0;
   font-weight: 700;
-  color: #1f2937;
+  color: #0f172a;
 }
 
 .education-list .grade,
 .education-list .date {
   margin: 3px 0;
+  color: var(--text-muted);
+}
+
+.education-list h3 {
+  margin: 0 0 10px;
+  color: #0f172a;
 }
 
 #activities .activities-list {
@@ -304,9 +356,10 @@ main section a:hover {
 #activities .activities-list li {
   position: relative;
   padding: 11px 12px 11px 34px;
-  border: 1px solid #e5ecfa;
+  border: 1px solid #d8e0ea;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
+  color: var(--text-soft);
 }
 
 #activities .activities-list li::before {
@@ -315,7 +368,7 @@ main section a:hover {
   left: 14px;
   top: 50%;
   transform: translateY(-50%);
-  color: #2563eb;
+  color: #1d4ed8;
   font-size: 1.2rem;
   line-height: 1;
 }
@@ -332,14 +385,14 @@ main section a:hover {
   align-items: center;
   gap: 12px;
   padding: 11px 12px;
-  border: 1px solid #e5ecfa;
+  border: 1px solid #d8e0ea;
   border-radius: 10px;
-  background: #fff;
+  background: #ffffff;
 }
 
 .lang-name {
   font-weight: 600;
-  color: #1f2937;
+  color: #0f172a;
 }
 
 .lang-level {
@@ -348,8 +401,8 @@ main section a:hover {
   font-size: 0.82rem;
   font-weight: 600;
   color: #1e3a8a;
-  background: #dbeafe;
-  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
 }
 
 #contact ul li {
@@ -359,8 +412,8 @@ main section a:hover {
 footer {
   padding: 18px;
   text-align: center;
-  color: #dbeafe;
-  background: #0f172a;
+  color: #e2e8f0;
+  background: #0b1220;
 }
 
 footer a {
@@ -371,6 +424,7 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+  color: #bfdbfe;
 }
 
 /* Animation helper classes (utilisees par script.js) */
@@ -524,7 +578,7 @@ footer a:hover {
     font-size: 1.34rem;
   }
 
-  .skills-list {
+  .skills-group .skills-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
