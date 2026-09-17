@@ -86,7 +86,7 @@ body {
   overflow: hidden;
 }
 
-header {
+.container > header {
   position: relative;
   padding: 20px 16px 18px;
   color: #ffffff;
@@ -109,14 +109,14 @@ header {
   text-align: center;
 }
 
-header h1 {
+.container > header h1 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 2.7rem);
   letter-spacing: 0.02em;
   color: #ffffff;
 }
 
-header p {
+.container > header p {
   margin: 8px 0 14px;
   font-size: 0.96rem;
   color: #f8fafc;
@@ -259,6 +259,9 @@ main section a:hover {
 
 .job-header {
   margin-bottom: 8px;
+  padding: 0;
+  color: var(--text);
+  background: none;
 }
 
 .job-role {
@@ -280,6 +283,10 @@ main section a:hover {
 .job-org {
   font-weight: 600;
   color: #1e3a8a;
+}
+
+.job-meta time {
+  color: var(--text-muted);
 }
 
 .job ul {
@@ -505,11 +512,11 @@ footer a:hover {
     padding: 18px;
   }
 
-  header {
+  .container > header {
     padding: 28px 24px;
   }
 
-  header p {
+  .container > header p {
     font-size: 1.03rem;
   }
 
@@ -541,7 +548,7 @@ footer a:hover {
     padding: 28px;
   }
 
-  header {
+  .container > header {
     padding: 34px;
   }
 
